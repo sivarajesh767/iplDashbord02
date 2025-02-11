@@ -2,13 +2,16 @@ import {Component} from 'react'
 import Loader from 'react-loader-spinner'
 import TeamCard from '../TeamCard'
 import './index.css'
+
 const ApiUrl = 'https://apis.ccbp.in/ipl'
 
 class Home extends Component {
   state = {isLoading: true, cricketTeamCardsDetails: []}
+
   componentDidMount() {
     this.getTeamCard()
   }
+
   getTeamCard = async () => {
     const response = await fetch(ApiUrl)
     const fetchedData = await response.json()
@@ -47,8 +50,10 @@ class Home extends Component {
           className="ipllogo-img"
         />
         <div className="bg-co1">
-          <h1 className="heading-1">IPL Dashbord</h1>
-          <div>{isLoading ? this.renderLoader() : this.matchCardView()}</div>
+          <h1 className="heading-1">IPL Dashboard</h1>
+          <div data-testid="loader">
+            {isLoading ? this.renderLoader() : this.matchCardView()}
+          </div>
         </div>
       </div>
     )

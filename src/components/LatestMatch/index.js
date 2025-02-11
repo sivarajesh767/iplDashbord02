@@ -22,7 +22,7 @@ const LatestMatch = props => {
         <p>{date}</p>
         <p>{venue}</p>
         <p>{result}</p>
-        <img src={competingTeamLogo} />
+        <img src={competingTeamLogo} alt={competingTeam} />
         <hr />
         <p>First Innings</p>
         <p>{firstInnings}</p>

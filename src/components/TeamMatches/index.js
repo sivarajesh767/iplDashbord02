@@ -5,9 +5,10 @@ import LatestMatch from '../LatestMatch'
 import MatchCard from '../MatchCard'
 import './index.css'
 
-const ApiUrl = 'https://apis.ccbp.in/ipl/:id'
+const ApiUrl = 'https://apis.ccbp.in/ipl'
 class TeamMatches extends Component {
   state = {isLoading: true, teamMatcheDetails: {}}
+
   componentDidMount() {
     this.getTeamMatches()
   }
@@ -53,6 +54,7 @@ class TeamMatches extends Component {
       </ul>
     )
   }
+
   getFormatted = () => {
     const {match} = this.props
     const {params} = match
@@ -97,6 +99,7 @@ class TeamMatches extends Component {
       </div>
     )
   }
+
   renderLoader = () => (
     <div data-testid="loader" className="loader-co">
       <Loader type="Oval" color="#ffff" height={50} />
